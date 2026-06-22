@@ -1,0 +1,1 @@
+{"schema":{"id_socio":"int64","nombre":"object","cedula":"object","correo":"object","telefono":"object","carrera":"object","facultad":"object","fecha_ingreso":"object","saldo_ahorros":"float64","tipo_cuenta":"object","estado":"object"},"columns":["id_socio","nombre","cedula","correo","telefono","carrera","facultad","fecha_ingreso","saldo_ahorros","tipo_cuenta","estado"]}

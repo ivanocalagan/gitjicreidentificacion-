@@ -1,0 +1,101 @@
+﻿id_socio,nombre,cedula,correo,telefono,carrera,facultad,fecha_ingreso,saldo_ahorros,tipo_cuenta,estado
+7-535-1860,Albano Llopis Hierro,3-537-6895,ana@example.com,6345-6789,Ing. Sistemas,FISC,2021-06-27,1872.53,Ahorro,Activo
+8-800-6734,Buenaventura de Bonet,2-376-5893,ana@example.com,6345-6780,Ingenier├¡a,FISC,2020-11-21,2130.49,Ahorro,Activo
+3-314-5426,Ileana Ant├│n-Andr├®s,1-383-8022,ana@example.com,6345-6780,Administraci├│n,FISC,2020-03-07,1914.7,Ahorro,Activo
+8-472-9322,C├®sar Guerrero Vazquez,1-552-8996,luis@example.com,6234-5679,Ing. Civil,FISC,2021-06-06,3400.0,Corriente,Activo
+6-408-1769,Alba Mar Flor Rivas,3-615-5642,carlos@example.com,6123-4567,Desarrollo Software,FISC,2019-12-02,2084.17,Ahorro,Activo
+8-591-7949,Jacobo del Agudo,1-611-9208,juan@example.com,6123-4567,Ing. Civil,FISC,2020-12-10,2098.17,Corriente,Activo
+2-291-6051,Paco Rocamora Nieto,5-617-2060,luis@example.com,6234-5678,Desarrollo Software,FISC,2019-10-22,2670.24,Ahorro,Activo
+5-260-5555,Casemiro Garrido-Navarro,8-448-1301,luis@example.com,6234-5679,Administraci├│n,FISC,2020-02-25,1250.5,Ahorro,Activo
+6-352-9666,Arturo Pinto Caballero,5-706-4170,luis@example.com,6234-5678,Desarrollo Software,FISC,2019-12-08,1927.77,Ahorro,Activo
+3-975-8734,Soraya N├║├▒ez Lamas,1-215-1190,luis@example.com,6234-5678,Ingenier├¡a,FISC,2021-03-25,2587.3,Corriente,Activo
+4-931-2528,P├ínfilo Segovia Casanovas,5-260-4327,luis@example.com,6234-5678,Ingenier├¡a,FISC,2020-04-23,3400.0,Ahorro,Activo
+3-584-4890,Ani Marcos Pardo,3-227-2816,maria@example.com,6345-6789,Ingenier├¡a,FISC,2021-04-28,1839.5,Corriente,Activo
+7-120-6393,Celia Ba├▒os-Arroyo,6-669-6442,juan@example.com,6345-6789,Ingenier├¡a,FISC,2020-03-31,2571.24,Corriente,Activo
+4-700-9433,Rolando del Bernal,8-785-4863,luis@example.com,6234-5678,Ing. Civil,FISC,2021-04-24,3400.0,Ahorro,Activo
+9-445-3612,Toribio de Pinto,2-387-5014,juan@example.com,6234-5679,Administraci├│n,FISC,2020-07-01,2740.53,Ahorro,Activo
+2-439-7235,Javi Pati├▒o-C├ínovas,6-762-4009,maria@example.com,6123-4567,Desarrollo Software,FISC,2022-01-06,3400.0,Ahorro,Activo
+7-527-1775,Felicidad Gallego Lasa,2-884-9096,maria@example.com,6234-5679,Desarrollo Software,FISC,2019-11-10,1739.78,Corriente,Activo
+3-305-4152,Marco Donoso Hierro,9-910-8343,juan@example.com,6345-6780,Ingenier├¡a,FISC,2021-03-14,1819.78,Ahorro,Activo
+4-661-4943,Jer├│nimo Pino Lerma,7-576-6801,ana@example.com,6345-6789,Ingenier├¡a,FISC,2019-08-31,1802.82,Corriente,Activo
+4-101-2021,Constanza del Barba,7-637-6986,carlos@example.com,6123-4567,Ing. Sistemas,FISC,2021-12-06,2147.69,Corriente,Activo
+6-665-4843,Segismundo de Moles,2-507-9716,ana@example.com,6123-4567,Administraci├│n,FISC,2020-02-15,1598.9,Ahorro,Activo
+6-576-7873,Edelmira Batalla Galv├ín,7-924-5780,ana@example.com,6345-6780,Ing. Civil,FISC,2020-02-04,1487.9,Ahorro,Activo
+2-301-1995,Valentina Miranda-Garcia,4-420-7655,ana@example.com,6345-6780,Desarrollo Software,FISC,2019-12-09,1895.01,Corriente,Activo
+8-561-2016,Gertrudis Segarra Clavero,3-570-6919,luis@example.com,6234-5678,Ing. Sistemas,FISC,2021-03-06,1980.89,Corriente,Activo
+8-824-7863,Buenaventura Huerta-J├│dar,7-953-5146,maria@example.com,6345-6789,Ing. Sistemas,FISC,2021-11-04,2178.28,Corriente,Activo
+2-978-5887,In├®s Pujol-Paredes,9-797-1574,ana@example.com,6345-6789,Desarrollo Software,FISC,2019-08-02,2409.28,Ahorro,Activo
+9-863-7331,Bruno del Bou,6-413-8509,maria@example.com,6234-5679,Ing. Civil,FISC,2021-07-24,3400.0,Corriente,Activo
+9-256-3062,Tito Canals Coronado,1-791-5777,juan@example.com,6234-5678,Ing. Sistemas,FISC,2021-08-26,1302.26,Ahorro,Activo
+1-956-9006,Ruy Roca Bartolom├®,6-882-3491,carlos@example.com,6234-5678,Ing. Sistemas,FISC,2021-06-16,2140.76,Corriente,Activo
+9-443-3027,Francisca Sol├® ├üngel,5-363-4124,juan@example.com,6234-5678,Administraci├│n,FISC,2019-08-14,3400.0,Corriente,Activo
+8-571-6258,Leonel Alberdi-Carb├│,5-202-6315,juan@example.com,6234-5678,Ing. Civil,FISC,2021-06-22,2880.83,Ahorro,Activo
+3-692-1391,Pili del Nieto,6-976-8027,luis@example.com,6345-6789,Ing. Sistemas,FISC,2022-01-14,2200.13,Corriente,Activo
+3-518-6892,Eugenio Royo Cruz,3-922-8079,carlos@example.com,6345-6789,Ing. Civil,FISC,2020-07-22,2753.9,Ahorro,Activo
+7-140-4099,Abril Lago Valle,4-755-5465,juan@example.com,6234-5678,Desarrollo Software,FISC,2021-04-08,2365.77,Ahorro,Activo
+7-300-4104,Jos├® Luis Camino Mart├¡n,3-756-9311,juan@example.com,6234-5679,Ingenier├¡a,FISC,2020-08-22,3045.07,Corriente,Activo
+7-506-9996,Mar├¡a Fernanda Flor,3-703-6177,carlos@example.com,6123-4567,Ing. Sistemas,FISC,2019-10-31,1250.5,Ahorro,Activo
+3-783-9154,Glauco Cu├®llar Abascal,7-445-9932,carlos@example.com,6123-4567,Administraci├│n,FISC,2021-11-08,2255.89,Ahorro,Activo
+3-838-9110,Etelvina Laura Aliaga Caparr├│s,5-929-3838,juan@example.com,6234-5679,Desarrollo Software,FISC,2020-10-07,2158.47,Corriente,Activo
+3-868-2028,Valeria Mel├®ndez Heras,9-740-2081,carlos@example.com,6234-5678,Ing. Civil,FISC,2020-09-28,2647.86,Ahorro,Activo
+7-866-7938,Dionisio Berm├║dez Boada,1-850-8805,juan@example.com,6345-6789,Desarrollo Software,FISC,2019-10-09,2023.48,Ahorro,Activo
+9-306-6134,Sabina Bay├│n Casas,6-659-4672,juan@example.com,6123-4567,Ing. Sistemas,FISC,2021-08-08,1524.9,Ahorro,Activo
+3-674-1863,Narciso Talavera Dalmau,8-336-4343,luis@example.com,6345-6780,Ing. Civil,FISC,2020-01-20,1762.76,Corriente,Activo
+7-340-9755,Juan Luis Rocha-Gal├ín,7-803-1580,ana@example.com,6345-6780,Ingenier├¡a,FISC,2019-11-07,1497.07,Ahorro,Activo
+4-833-8574,Priscila de Mesa,6-960-9130,juan@example.com,6234-5679,Desarrollo Software,FISC,2021-12-03,2945.96,Corriente,Activo
+7-848-2678,Nazaret Perea R├¡os,3-185-3744,maria@example.com,6234-5678,Ing. Sistemas,FISC,2020-02-09,1395.23,Corriente,Activo
+4-624-4157,Jennifer Carrillo,5-146-3141,ana@example.com,6123-4567,Administraci├│n,FISC,2021-07-07,2570.3,Ahorro,Activo
+2-781-3693,Daniel de Neira,4-552-7617,ana@example.com,6234-5678,Ing. Civil,FISC,2019-10-10,1990.68,Ahorro,Activo
+4-897-6450,Macario Grau Gim├®nez,5-650-8421,ana@example.com,6123-4567,Desarrollo Software,FISC,2019-10-25,3400.0,Ahorro,Activo
+7-447-6592,Andr├®s Felipe Barral Granados,5-122-6881,luis@example.com,6234-5679,Desarrollo Software,FISC,2020-09-16,1719.19,Corriente,Activo
+7-289-8392,V├¡ctor Angulo Murillo,6-936-3849,juan@example.com,6234-5679,Ingenier├¡a,FISC,2019-09-20,1702.08,Ahorro,Activo
+1-476-2306,Jos├® ├üngel G├írate Lopez,4-322-7905,luis@example.com,6345-6780,Ingenier├¡a,FISC,2019-12-02,2207.41,Ahorro,Activo
+9-727-6864,Clotilde Catal├ín Su├írez,3-541-5611,juan@example.com,6234-5678,Administraci├│n,FISC,2021-08-03,2247.2,Ahorro,Activo
+3-458-9901,Ruben del Ram├¡rez,8-435-6878,luis@example.com,6345-6780,Administraci├│n,FISC,2021-05-19,1715.94,Ahorro,Activo
+8-510-5413,Asdrubal Caballero,2-596-7303,luis@example.com,6234-5678,Ing. Sistemas,FISC,2021-02-17,1941.47,Ahorro,Activo
+5-324-1663,Felicidad Roda Reig,4-763-7833,maria@example.com,6345-6780,Ing. Sistemas,FISC,2021-10-17,2231.31,Corriente,Activo
+6-771-2495,Teresa Balaguer Cabello,3-479-5000,luis@example.com,6345-6789,Administraci├│n,FISC,2020-10-04,1250.5,Corriente,Activo
+9-791-6232,Heriberto Nicolau Canales,3-526-6732,carlos@example.com,6345-6789,Administraci├│n,FISC,2019-08-19,3400.0,Ahorro,Activo
+1-541-2291,Clemente de Sanabria,3-676-6536,maria@example.com,6345-6789,Ing. Civil,FISC,2021-03-23,1746.85,Ahorro,Activo
+7-485-8554,H├®ctor Espa├▒ol Lopez,8-941-2066,luis@example.com,6345-6789,Ingenier├¡a,FISC,2020-02-10,3400.0,Ahorro,Activo
+1-712-4696,Diana Benet Salazar,2-352-9945,ana@example.com,6123-4567,Ing. Sistemas,FISC,2019-07-31,3400.0,Ahorro,Activo
+8-180-1698,Ariel de Alcolea,3-826-9967,carlos@example.com,6345-6789,Ingenier├¡a,FISC,2020-12-12,1466.08,Corriente,Activo
+1-101-5737,Renato Guzm├ín Delgado,2-214-9808,carlos@example.com,6234-5679,Ingenier├¡a,FISC,2021-02-16,3400.0,Ahorro,Activo
+6-954-9164,Julieta Teruel Garc├¡a,7-295-1825,carlos@example.com,6234-5679,Administraci├│n,FISC,2019-11-13,3400.0,Corriente,Activo
+1-484-6249,Yaiza Barral C├│zar,5-725-1412,maria@example.com,6123-4567,Ing. Civil,FISC,2019-12-02,1250.5,Corriente,Activo
+5-783-6791,Abril Portero Lara,8-519-1728,luis@example.com,6345-6789,Desarrollo Software,FISC,2021-02-26,1666.55,Ahorro,Activo
+6-515-5931,Elo├¡sa Rocha Torrecilla,5-860-9867,luis@example.com,6345-6789,Ing. Civil,FISC,2020-05-24,2087.46,Corriente,Activo
+7-302-5218,Claudio Martin Gelabert,5-556-3967,ana@example.com,6345-6789,Ing. Civil,FISC,2021-06-29,1901.1,Corriente,Activo
+1-866-5389,Luis Miguel Barrera Mir,3-788-2122,ana@example.com,6345-6780,Ingenier├¡a,FISC,2020-12-22,2384.67,Corriente,Activo
+8-936-3931,Amador Tapia Valverde,4-195-7806,carlos@example.com,6234-5678,Ing. Civil,FISC,2021-04-15,2318.7,Corriente,Activo
+2-297-8125,Camila Barber├í,5-879-4440,ana@example.com,6345-6780,Ing. Sistemas,FISC,2020-01-17,1250.5,Ahorro,Activo
+1-300-5282,Anita Estevez,7-624-3914,maria@example.com,6234-5678,Ingenier├¡a,FISC,2019-11-07,1533.43,Ahorro,Activo
+6-563-1659,Manuel Bayo Gutierrez,9-897-9787,luis@example.com,6345-6789,Ing. Sistemas,FISC,2020-12-31,2492.3,Corriente,Activo
+4-502-2986,Azeneth Hoz Ari├▒o,9-441-5492,carlos@example.com,6345-6789,Desarrollo Software,FISC,2020-07-19,1250.5,Ahorro,Activo
+3-247-3911,Anita Hortensia Y├í├▒ez Molina,3-276-1395,ana@example.com,6345-6780,Ingenier├¡a,FISC,2019-11-17,1250.5,Ahorro,Activo
+7-919-9680,Cristian Miralles-G├│mez,9-175-5360,maria@example.com,6345-6780,Desarrollo Software,FISC,2022-01-06,3039.36,Ahorro,Activo
+1-739-7694,Hector Castro-Mar├¡n,7-895-1717,maria@example.com,6234-5678,Ingenier├¡a,FISC,2019-11-11,2307.96,Ahorro,Activo
+2-971-5736,Estela Belmonte Agust├¡,4-950-6486,ana@example.com,6234-5679,Administraci├│n,FISC,2021-11-14,3400.0,Ahorro,Activo
+9-572-6534,Mar├¡a ├üngeles Cabo Beltr├ín,5-168-8266,luis@example.com,6234-5678,Ing. Civil,FISC,2020-07-22,2335.67,Corriente,Activo
+3-362-7287,Clotilde del Cazorla,9-990-6588,ana@example.com,6345-6780,Administraci├│n,FISC,2021-03-31,3400.0,Ahorro,Activo
+9-671-3049,Vera Bayona Hidalgo,4-664-2167,carlos@example.com,6345-6780,Desarrollo Software,FISC,2019-10-16,2772.56,Ahorro,Activo
+1-403-5548,Elodia Cruz R├¡os,9-138-3156,ana@example.com,6123-4567,Ing. Civil,FISC,2020-03-07,1250.5,Ahorro,Activo
+5-259-8158,Ofelia del ├üngel,5-141-6305,maria@example.com,6345-6780,Ingenier├¡a,FISC,2020-10-18,1250.5,Ahorro,Activo
+9-332-4170,Nazario Mar├¡ Calleja,7-497-5729,ana@example.com,6123-4567,Ing. Civil,FISC,2020-09-28,1799.92,Corriente,Activo
+3-915-3255,Eligio Carlos Campo,5-262-6334,luis@example.com,6234-5679,Ing. Sistemas,FISC,2020-04-05,1250.5,Corriente,Activo
+3-503-7295,Calixta del Luj├ín,2-850-7731,juan@example.com,6234-5678,Ing. Civil,FISC,2021-11-05,1500.08,Corriente,Activo
+6-219-2648,Clementina Paca Novoa Frutos,9-173-1953,ana@example.com,6234-5678,Ing. Sistemas,FISC,2020-01-26,1250.5,Corriente,Activo
+8-519-5199,Jos├® Antonio Torres-Iglesias,1-352-2542,luis@example.com,6123-4567,Ing. Civil,FISC,2019-12-02,1343.06,Ahorro,Activo
+4-353-3557,Arturo Roda Lloret,8-269-7938,luis@example.com,6234-5678,Ing. Sistemas,FISC,2019-11-21,2069.93,Corriente,Activo
+9-198-3200,Abel M├║gica Castrillo,2-616-7172,maria@example.com,6345-6780,Desarrollo Software,FISC,2020-12-09,1250.5,Ahorro,Activo
+2-995-5973,Cecilio Sala-Roma,5-521-2365,luis@example.com,6345-6789,Administraci├│n,FISC,2019-11-11,1518.89,Ahorro,Activo
+2-805-3869,Adelia de Benet,4-756-9702,luis@example.com,6123-4567,Ingenier├¡a,FISC,2021-09-25,2048.27,Ahorro,Activo
+3-819-1956,Leandro Araujo Peir├│,7-316-2324,luis@example.com,6234-5678,Ing. Civil,FISC,2020-09-20,2233.81,Ahorro,Activo
+9-260-6699,Mamen Colomer-Ropero,4-903-4141,luis@example.com,6123-4567,Administraci├│n,FISC,2021-12-12,2095.8,Ahorro,Activo
+1-497-5911,Alfonso Mendez Pastor,3-544-3923,carlos@example.com,6123-4567,Ingenier├¡a,FISC,2020-12-23,2168.9,Corriente,Activo
+4-603-7015,Vinicio Pallar├¿s Gallo,6-266-5186,carlos@example.com,6345-6789,Ingenier├¡a,FISC,2019-12-02,2829.79,Corriente,Activo
+8-234-2218,Nazario de Otero,3-138-5268,maria@example.com,6345-6780,Ing. Sistemas,FISC,2020-01-10,1250.5,Corriente,Activo
+1-739-5555,Ver├│nica del Cortes,2-319-4709,ana@example.com,6123-4567,Desarrollo Software,FISC,2019-09-22,2680.54,Corriente,Activo
+3-569-4446,Toni de Elorza,4-575-9647,luis@example.com,6234-5678,Desarrollo Software,FISC,2021-03-18,2272.12,Ahorro,Activo
+6-849-2693,Aitana Escobar M├írquez,9-100-7530,ana@example.com,6234-5679,Administraci├│n,FISC,2021-09-30,1952.14,Corriente,Activo
+6-329-4436,Rosario Hurtado Lasa,9-290-2531,ana@example.com,6123-4567,Desarrollo Software,FISC,2020-03-10,3400.0,Ahorro,Activo

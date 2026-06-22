@@ -1,0 +1,248 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║              DAT-SIN — MANUAL DE USUARIO (CÓMO EJECUTAR MANUALMENTE)        ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+ANTES DE EMPEZAR:
+- Asegúrate de tener Python 3.11+ instalado (Windows: C:\Users\...\AppData\Local\Programs\Python\)
+- Asegúrate de tener Node.js + npm instalado
+- Dos terminales abiertas (PowerShell recomendado en Windows)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+PASO 1: INICIAR BACKEND (Terminal 1)
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Abre PowerShell y ve a la carpeta backend:
+
+   cd C:\Users\Ivan\saga\backend
+
+2. Activa el entorno virtual:
+
+   .\.venv\Scripts\Activate.ps1
+
+   (Si obtienes error de "no ejecutar scripts", ejecuta como admin:
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser)
+
+3. Inicia el servidor FastAPI:
+
+   uvicorn main:app --reload --port 8000
+
+   Resultado esperado:
+   ───────────────────────────────────────────────
+   INFO:     Uvicorn running on http://127.0.0.1:8000
+   INFO:     Application startup complete.
+   ───────────────────────────────────────────────
+
+   ✓ Backend operativo en http://localhost:8000
+   ✓ NO cierres esta terminal (el backend sigue corriendo)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+PASO 2: INICIAR FRONTEND (Terminal 2 — NUEVA)
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Abre OTRA terminal PowerShell y ve a la carpeta frontend:
+
+   cd C:\Users\Ivan\saga\frontend
+
+2. Inicia el servidor Vite:
+
+   npm run dev
+
+   Resultado esperado:
+   ───────────────────────────────────────────────
+   VITE v5.4.21 ready in 1189 ms
+   ➜ Local:   http://localhost:5173/
+   ➜ press h + enter to show help
+   ───────────────────────────────────────────────
+
+   ✓ Frontend operativo en http://localhost:5173
+   ✓ NO cierres esta terminal (el frontend sigue corriendo)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+PASO 3: USAR DAT-SIN EN EL NAVEGADOR
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Abre tu navegador (Chrome, Firefox, Edge, etc.)
+2. Ve a: http://localhost:5173
+3. Verás la interfaz con 4 pasos:
+
+   ┌─────────────────────────────────────────────────┐
+   │ DAT-SIN — Sistema de Anonimización              │
+   │ 📤 Paso 1 | ⚠️ Paso 2 | 🔮 Paso 3 | 💾 Paso 4   │
+   └─────────────────────────────────────────────────┘
+
+4. Sigue los pasos:
+
+   [PASO 1: Upload]
+   - Arrastra coopefisc_socios.csv (en C:\Users\Ivan\saga\backend\sample_data\)
+   - O selecciona manualmente
+   - Verás preview de 5 filas
+   - Backend recibe, guarda en SESIÓN (RAM, no disco)
+
+   [PASO 2: Evaluación de Riesgo]
+   - Haz clic "Evaluar Riesgo"
+   - Backend analiza columnas (nombre, cedula, saldo, etc.)
+   - Resultado: Score 100 (ALTO) con colores rojo/amarillo/verde
+   - Muestra qué columnas son críticas
+
+   [PASO 3: Generar Sintéticos]
+   - Ajusta Epsilon (default 1.0 = recomendado)
+   - Elige cuántas filas generar (default 100)
+   - Haz clic "🔮 Generar Datos Sintéticos"
+   - Espera 3-5 segundos
+   - Verás preview con datos FALSOS (nombres Faker, cedulas X-XXX-XXXX, salarios con ruido)
+
+   [PASO 4: Exportar]
+   - Verás 3 botones: CSV, SQL, PDF
+   - Haz clic en "Descargar CSV"
+   - El navegador descarga automático a C:\Users\{tu_usuario}\Downloads\
+   - Abre con Excel/Calc para ver datos sintéticos
+
+
+═══════════════════════════════════════════════════════════════════════════════
+DETENER SERVIDORES
+═══════════════════════════════════════════════════════════════════════════════
+
+Para backend (Terminal 1):
+   Presiona: Ctrl + C
+   Verás: KeyboardInterrupt (shutting down)
+   Backend se apaga
+
+Para frontend (Terminal 2):
+   Presiona: Ctrl + C
+   Verás: ^C (SIGINT)
+   Frontend se apaga
+
+Ambas terminales quedan disponibles para reutilizar.
+
+
+═══════════════════════════════════════════════════════════════════════════════
+SOLUCIÓN DE PROBLEMAS
+═══════════════════════════════════════════════════════════════════════════════
+
+❌ Error: "Python no se reconoce como comando"
+   Solución: Verifica que deshabilitaste los alias python.exe y python3.exe 
+   en Configuración > Aplicaciones > Aplicaciones Instaladas > Configuración Avanzada
+
+❌ Error: "Uvicorn no se reconoce"
+   Solución: El venv no está activado. Ejecuta:
+   .\.venv\Scripts\Activate.ps1
+
+❌ Error: "npm not found"
+   Solución: Instala Node.js desde https://nodejs.org (LTS recomendado)
+
+❌ Error: "Connection refused" en navegador
+   Solución: Verifica que AMBAS terminales están corriendo:
+   - Ctrl+C en Terminal 1 = Backend OFF
+   - Ctrl+C en Terminal 2 = Frontend OFF
+   Reinicia ambos
+
+❌ Error: "CORS error" en consola del navegador
+   Solución: El backend no tiene CORS habilitado. Verifica main.py línea 7:
+   app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:5173"], ...)
+
+❌ CSV descargado está vacío
+   Solución: Completa los 3 primeros pasos (upload, risk, generate) primero
+
+
+═══════════════════════════════════════════════════════════════════════════════
+FLUJO TÍPICO COMPLETO
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Terminal 1 abierta:    uvicorn main:app --reload --port 8000
+2. Terminal 2 abierta:    npm run dev
+3. Navegador abierto:     http://localhost:5173
+4. Subes CSV:             coopefisc_socios.csv (50 filas)
+5. Esperas 2 segundos
+6. Haz clic "Evaluar Riesgo"
+7. Esperas 1 segundo
+8. Ajustas Epsilon=1.0
+9. Haz clic "Generar"
+10. Esperas 3 segundos
+11. Haz clic "Descargar CSV"
+12. Abre file:///C:/Users/{tu_usuario}/Downloads/synthetic.csv
+13. Ves 100 filas de datos COMPLETAMENTE FALSOS pero realistas
+14. Comparas con original: cedulas distintas ✓, nombres distintos ✓, salarios perturbados ✓
+15. Listo: Datos anonimizados y descargados
+
+
+═══════════════════════════════════════════════════════════════════════════════
+ARQUITECTURA MÍNIMA
+═══════════════════════════════════════════════════════════════════════════════
+
+Tu computadora es SUFICIENTE:
+- CPU Intel/AMD (normal)
+- RAM 8GB (recomendado 4GB mínimo)
+- Disco 500MB (para código + Node modules)
+- Windows 10/11
+
+NO necesitas:
+- Servidor en la nube
+- XAMPP
+- Docker
+- Nginx/Apache
+
+TODO corre localmente en 2 ports:
+- 8000 (Python Uvicorn)
+- 5173 (Node Vite)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+ARCHIVOS IMPORTANTES
+═══════════════════════════════════════════════════════════════════════════════
+
+C:\Users\Ivan\saga\
+├── backend/
+│   ├── main.py                    ← Endpoints (lo que importa para pruebas)
+│   ├── requirements.txt           ← Dependencias (pip install -r)
+│   ├── modules/
+│   │   ├── loader.py              ← Parsea CSV/SQL
+│   │   ├── risk_evaluator.py      ← Calcula riesgo
+│   │   ├── synthetic_engine.py    ← Genera datos sintéticos
+│   │   └── exporter.py            ← Exporta CSV/SQL/PDF
+│   ├── sample_data/
+│   │   └── coopefisc_socios.csv   ← Datos de prueba (50 filas)
+│   └── .venv/                     ← Entorno virtual (no modificar)
+│
+├── frontend/
+│   ├── package.json               ← Dependencias npm
+│   ├── src/
+│   │   ├── App.jsx                ← Orquestador de 4 pasos
+│   │   └── components/
+│   │       ├── StepUpload.jsx
+│   │       ├── StepRisk.jsx
+│   │       ├── StepGenerate.jsx
+│   │       └── StepExport.jsx
+│   └── vite.config.js             ← Config Vite (puerto 5173)
+│
+└── docs/
+    ├── ARQUITECTURA_Y_PUERTOS.txt ← Lee esto para entender puertos
+    └── USO_Y_CAPTURAS.md          ← Guía visual
+
+
+═══════════════════════════════════════════════════════════════════════════════
+NOTAS FINALES
+═══════════════════════════════════════════════════════════════════════════════
+
+✓ "¿Puedo cerrar las terminales después?" 
+  NO. Las terminales mantienen los servidores corriendo. Si las cierras, se apagan.
+
+✓ "¿Puedo cambiar los puertos 8000 y 5173?"
+  SÍ, pero es innecesario. Son los puertos por defecto. Si los cambias, actualiza:
+  - Backend: uvicorn main:app --port 9000
+  - Frontend: npm run dev -- --port 6000
+  - Y en components, cambia fetch('http://localhost:8000/...') por puerto nuevo
+
+✓ "¿Es seguro en mi red local?"
+  SÍ. Los servidores solo escuchan en 127.0.0.1 (localhost). 
+  Tu vecino no puede acceder a http://tu_ip:8000 desde su PC.
+
+✓ "¿Qué pasa si cierro el navegador?"
+  Los servidores siguen corriendo. Abre otro navegador y ve a http://localhost:5173
+
+✓ "¿Es normal que sea lento la primera vez?"
+  SÍ. Backend compila módulos Python, frontend bundlea JavaScript. Luego es rápido.
+
+¡LISTO PARA USAR DAT-SIN!

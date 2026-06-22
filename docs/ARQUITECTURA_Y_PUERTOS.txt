@@ -1,0 +1,228 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    DAT-SIN — GUÍA TÉCNICA Y ARQUITECTURA                     ║
+║         Sistema de Anonimización con Privacidad Diferencial (Ley 81)        ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+1. ¿QUÉ ES DAT-SIN?
+   - Un sistema web que convierte datos reales en datos sintéticos estadísticamente 
+     realistas, garantizando privacidad diferencial según la Ley 81 de Panamá.
+   - No guarda datos reales en disco: todo ocurre en memoria RAM (sesión).
+   - Cumplimiento: Artículos X, Y de Ley 81 (Protección de Datos Personales).
+
+
+2. ¿POR QUÉ DOS PUERTOS (8000 Y 5173)?
+   
+   ARQUITECTURA DE APLICACIONES MODERNAS:
+   
+   Port 8000 (Backend - FastAPI):
+     - Máquina responsable: Servidor Python/Uvicorn
+     - Función: Procesa datos, evalúa riesgo, genera sintéticos, exporta
+     - Endpoints:
+       POST   http://localhost:8000/api/upload            → sube CSV/SQL
+       POST   http://localhost:8000/api/evaluate-risk     → calcula riesgo
+       POST   http://localhost:8000/api/generate          → genera sintéticos
+       GET    http://localhost:8000/api/export/csv        → descarga CSV
+       GET    http://localhost:8000/api/export/pdf-report → descarga PDF
+     - Comunicación: API REST + JSON
+   
+   Port 5173 (Frontend - React + Vite):
+     - Máquina responsable: Servidor Node.js/Vite
+     - Función: Interfaz visual (botones, formularios, tablas, gráficos)
+     - Lo que hace: Captura entrada del usuario → Envía requests a puerto 8000 → Muestra respuesta
+     - Comunicación: HTTP + Fetch API
+   
+   ¿POR QUÉ DOS PUERTOS?
+     - Separación de responsabilidades: Backend ≠ Frontend (escalabilidad, mantenimiento)
+     - Independencia: Puedes cambiar frontend React por Vue/Angular sin tocar backend
+     - Desarrollo paralelo: Dos equipos pueden trabajar sin conflictos
+     - En producción: Frontend se puede servir desde CDN, backend en servidor
+   
+   ANALÓGICO:
+     - Port 8000: "La cocina del restaurante" (calcula, procesa)
+     - Port 5173: "La mesera" (recibe pedido, presenta resultado)
+
+
+3. ¿CÓMO FUNCIONA LA ARQUITECTURA POR CAPAS?
+
+   ┌─────────────────────────────────────────────────────────────┐
+   │ CAPA 1: PRESENTACIÓN (Frontend - React)                     │
+   │ - App.jsx: Orquesta 4 pasos                                 │
+   │ - StepUpload.jsx: Interfaz drag-and-drop                   │
+   │ - StepRisk.jsx: Muestra "termómetro" de riesgo              │
+   │ - StepGenerate.jsx: Slider epsilon, botón generar           │
+   │ - StepExport.jsx: Botones descargar CSV/SQL/PDF             │
+   │ Tecnología: React 18, Tailwind CSS, Vite                    │
+   └─────────────────────────────────────────────────────────────┘
+                              ↕ FETCH API (JSON)
+   ┌─────────────────────────────────────────────────────────────┐
+   │ CAPA 2: API/LÓGICA (Backend - FastAPI main.py)              │
+   │ - Endpoints HTTP: /api/upload, /api/evaluate-risk, etc.     │
+   │ - Maneja requests, valida entrada, orquesta módulos          │
+   │ - CORS habilitado para http://localhost:5173                │
+   │ - Almacenamiento en memoria: SESSIONS = {}                  │
+   └─────────────────────────────────────────────────────────────┘
+                              ↕ Importa módulos
+   ┌─────────────────────────────────────────────────────────────┐
+   │ CAPA 3: MÓDULOS DE LÓGICA DE NEGOCIO                        │
+   │                                                              │
+   │ 1. loader.py:                                               │
+   │    - load_dataset(file) → Parsea CSV/SQL                    │
+   │    - Retorna: table_name, columns, row_count, preview       │
+   │                                                              │
+   │ 2. risk_evaluator.py:                                       │
+   │    - evaluate_risk(schema, columns) → Score de riesgo       │
+   │    - Clasificación: DIRECTO (35pts) → CUASI (15pts) →       │
+   │      SENSIBLE (10pts) → Clampea 0-100 → Nivel ALTO/MED/BAJO │
+   │                                                              │
+   │ 3. synthetic_engine.py:                                     │
+   │    - generate_synthetic_data(df, config) → Datos falsos      │
+   │    - Por columna:                                            │
+   │      • Nombre/Cedula → Faker (100% falso)                   │
+   │      • Salario/Edad → Laplace DP (ruido + original)         │
+   │      • Categóricas → Bootstrap (muestreo con reemplazo)     │
+   │                                                              │
+   │ 4. exporter.py:                                             │
+   │    - export_csv_bytes(df) → CSV en memoria                  │
+   │    - generate_pdf_report() → PDF con score + epsilon        │
+   └─────────────────────────────────────────────────────────────┘
+                              ↕ Archivos
+   ┌─────────────────────────────────────────────────────────────┐
+   │ CAPA 4: DATOS (En memoria, nunca a disco)                   │
+   │ - Dataframes pandas en sesión: {session_token: {...}}       │
+   │ - Limpieza automática al cerrar sesión                      │
+   │ - NO se escriben datos reales en archivos .db, .txt, etc.   │
+   └─────────────────────────────────────────────────────────────┘
+
+
+4. FLUJO COMPLETO PASO A PASO
+
+   USUARIO EN NAVEGADOR (http://localhost:5173)
+   │
+   ├─ [PASO 1 — UPLOAD]
+   │  └→ Arrastra coopefisc_socios.csv
+   │     └→ React StepUpload.jsx lee archivo (File API)
+   │        └→ Envía POST http://localhost:8000/api/upload (FormData)
+   │           └→ FastAPI main.py recibe en memoria (NO a disco)
+   │              └→ loader.load_dataset() parsea con pandas
+   │                 └→ Retorna: columns, preview, session_token="abc123"
+   │                    └→ Guarda en SESSIONS["abc123"] = {preview, schema}
+   │                       └→ Frontend muestra preview 5 filas ✓
+   │
+   ├─ [PASO 2 — EVALUACIÓN RIESGO]
+   │  └→ Usuario haz clic "Evaluar Riesgo"
+   │     └→ Frontend POST /api/evaluate-risk {schema, columns}
+   │        └→ Backend risk_evaluator.evaluate_risk()
+   │           ├─ Busca "nombre" en columnas → +35 (directo)
+   │           ├─ Busca "cedula" en columnas → +35 (directo)
+   │           ├─ Busca "saldo" en columnas → +10 (sensible)
+   │           ├─ Busca "carrera" en columnas → +15 (cuasi)
+   │           ├─ Total: 35+35+10+15 = 95 → Clampea a 100
+   │           └─ Score=100 → risk_level="ALTO" → color rojo #EF4444
+   │              └→ Frontend muestra termómetro rojo, chips clasificados ✓
+   │
+   ├─ [PASO 3 — GENERAR SINTÉTICOS]
+   │  └→ Usuario configura Epsilon=1.0, Filas=100, haz clic "Generar"
+   │     └→ Frontend POST /api/generate {session_token, epsilon, n_rows, ...}
+   │        └→ Backend synthetic_engine.generate_synthetic_data()
+   │           ├─ Crea DataFrame vacío (100 filas)
+   │           ├─ Para columna "nombre":
+   │           │  └─ faker.name() × 100 → ["Albano Llopis", "Buenaventura de Bonet", ...]
+   │           ├─ Para columna "cedula":
+   │           │  └─ Formato X-XXX-XXXX × 100 → ["3-537-6895", "2-376-5893", ...]
+   │           ├─ Para columna "saldo_ahorros":
+   │           │  └─ Sensibilidad = max-min / n_rows
+   │           │  └─ noise_scale = sensibilidad / epsilon
+   │           │  └─ valor_sintetico = muestreo_original + np.random.laplace(0, noise_scale)
+   │           │  └─ Resultado: valores en rango realista pero perturbados
+   │           ├─ Para columna "carrera":
+   │           │  └─ Bootstrap: sample from {Ing.Sistemas, Civil, Desarrollo, ...}
+   │           └─ Retorna: DataFrame sintético, report {epsilon, filas, métodos, ley81=true}
+   │              ├─ Genera download_token="xyz789"
+   │              ├─ Guarda en SESSIONS["xyz789"] = {synthetic_df, report}
+   │              └→ Frontend muestra preview 5 filas sintéticas, métodos por columna ✓
+   │
+   └─ [PASO 4 — EXPORTAR]
+      └→ Usuario haz clic "Descargar CSV"
+         └→ Frontend abre window.open('http://localhost:8000/api/export/csv?token=xyz789')
+            └→ FastAPI endpoint GET /api/export/csv
+               ├─ Busca SESSIONS["xyz789"]
+               ├─ Accede DataFrame sintético
+               ├─ exporter.export_csv_bytes() → df.to_csv() en memoria
+               └→ StreamingResponse: CONTENT-TYPE: text/csv
+                  └→ Navegador descarga → Carpeta Descargas del usuario ✓
+                     (NO se escribió nada en C:/saga/; todo fue RAM)
+
+
+5. PRIVACIDAD DIFERENCIAL (DP) — EXPLICADO SIMPLE
+
+   ¿Qué es?
+   - Técnica matemática que añade ruido controlado a datos sensibles.
+   - Garantía: "No puedo saber si tu dato personal está en el dataset"
+   
+   Fórmula:
+   - valor_sintetico = valor_original_muestra + ruido_laplace(0, sensitivity/epsilon)
+   
+   Epsilon (ε):
+   - ε ≤ 0.5 → Máxima privacidad (distorsión alta)
+   - ε = 1.0 → Balance recomendado (Ley 81 Panamá)
+   - ε > 2.0 → Menos privacidad (utilidad estadística alta)
+   
+   Ejemplo:
+   - Salario original: 2500
+   - Sensibilidad: (5000-500) / 50_filas = 90
+   - noise_scale = 90 / 1.0 = 90
+   - Ruido Laplace: 23.4 (número aleatorio)
+   - Salario sintético: 2500 + 23.4 = 2523.4 ✓
+     (Parece real, pero está perturbado)
+
+
+6. ¿CÓMO ENCENDERLO MANUALMENTE TÚ?
+
+   TERMINAL 1 — Backend:
+   cd C:\Users\Ivan\saga\backend
+   .\.venv\Scripts\Activate.ps1
+   uvicorn main:app --reload --port 8000
+   
+   TERMINAL 2 — Frontend:
+   cd C:\Users\Ivan\saga\frontend
+   npm run dev
+   # Abre http://localhost:5173
+   
+   El backend sigue corriendo en background en la Terminal 1.
+   El frontend puede refrescar (F5) sin reiniciar backend.
+
+
+7. ¿FUNCIONARÍA CON XAMPP?
+
+   NO directamente. XAMPP es para PHP/Apache/MySQL. DAT-SIN necesita:
+   - Python 3.11 (no lo incluye XAMPP)
+   - FastAPI + Uvicorn (no lo incluye XAMPP)
+   - Node.js (no lo incluye XAMPP)
+   
+   Alternativa:
+   - Dejarías XAMPP de lado y usarías los servidores nativos (Uvicorn + Vite)
+   - O convertir backend a PHP (mucho trabajo, NO recomendado)
+   
+   Conclusión: Usa los puertos 8000 y 5173 tal cual (lo recomendado).
+
+
+8. DESCARGAS DE ARCHIVOS
+
+   ¿Dónde se guardan?
+   - Frontend haz window.open('...') → Navegador descarga a carpeta por defecto
+   - Windows: Carpeta "Descargas" (C:\Users\{tu_usuario}\Downloads)
+   - O donde hayas configurado en navegador
+   
+   ¿Se escriben a disco en C:\saga\?
+   - NO. El CSV descargado viene desde memoria (StreamingResponse).
+   - Se guarda en tu PC (donde el navegador lo ponga), no en C:\saga\.
+
+
+PUNTOS CLAVE FINALES:
+✓ Backend y frontend son PROCESOS INDEPENDIENTES
+✓ 8000 (Python) + 5173 (Node) = Arquitectura moderna estándar
+✓ Los datos nunca se escriben a disco durante procesamiento
+✓ Privacidad diferencial garantiza epsilon-DP según Ley 81
+✓ Cada descarga viene de RAM, se guarda en tu PC
+✓ XAMPP NO es necesario; usa Uvicorn + Vite
+✓ Encenderlo manualmente: 2 terminales, comando activar + uvicorn/npm run dev
