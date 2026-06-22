@@ -1,0 +1,4 @@
+id_socio,nombre,cedula,correo,telefono,carrera,facultad,fecha_ingreso,saldo_ahorros,tipo_cuenta,estado
+1,Ana González,8-123-4567,ana@example.com,6123-4567,Ing. Sistemas,FISC,2021-03-15,1250.50,Ahorro,Activo
+2,Carlos Rivas,2-456-7890,carlos@example.com,6234-5678,Desarrollo Software,FISC,2020-08-01,3400.00,Corriente,Activo
+3,María Pérez,3-987-6543,maria@example.com,6345-6789,Ingeniería, FISC,2019-07-21,2100.75,Ahorro,Activo
