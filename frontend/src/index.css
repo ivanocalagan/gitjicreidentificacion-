@@ -2,4 +2,197 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, #root { height: 100%; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f172a 0%, #1a0f2e 50%, #0f172a 100%);
+  color: #f8fafc;
+  overflow-x: hidden;
+}
+
+/* Scroll personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7c3aed;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a855f7;
+}
+
+/* Animaciones personalizadas */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(124, 58, 237, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(124, 58, 237, 0.8); }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Clases de utilidad */
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+.glow-animation {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.slide-down-animation {
+  animation: slideDown 0.5s ease-out;
+}
+
+.fade-in-animation {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Gradientes personalizados */
+.gradient-purple-pink {
+  background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
+}
+
+.gradient-dark-slate {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+/* Efectos de hover */
+.hover-lift {
+  transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(124, 58, 237, 0.3);
+}
+
+/* Botones personalizados */
+.btn-primary {
+  @apply px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 rounded-lg font-semibold text-white transition-all duration-300 cursor-pointer shadow-lg hover:shadow-xl hover:shadow-purple-500/50 active:scale-95;
+}
+
+.btn-secondary {
+  @apply px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-lg font-medium text-slate-200 transition-all duration-300 cursor-pointer;
+}
+
+/* Tarjetas personalizadas */
+.card {
+  @apply bg-slate-800/50 backdrop-blur-sm border border-purple-500/20 rounded-2xl p-6 shadow-lg transition-all duration-300;
+}
+
+.card:hover {
+  @apply border-purple-500/50 shadow-xl shadow-purple-500/20;
+}
+
+/* Input personalizado */
+input[type="file"],
+input[type="number"],
+input[type="text"],
+input[type="range"],
+textarea {
+  @apply bg-slate-700 border border-slate-600 rounded-lg px-3 py-2 text-slate-50 placeholder-slate-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/30 transition-all duration-200;
+}
+
+/* Badge personalizado */
+.badge {
+  @apply inline-block px-3 py-1 rounded-full text-xs font-semibold bg-slate-700 text-slate-300;
+}
+
+.badge-purple {
+  @apply bg-purple-900/50 text-purple-300 border border-purple-500/30;
+}
+
+.badge-red {
+  @apply bg-red-900/50 text-red-300 border border-red-500/30;
+}
+
+.badge-yellow {
+  @apply bg-yellow-900/50 text-yellow-300 border border-yellow-500/30;
+}
+
+.badge-green {
+  @apply bg-green-900/50 text-green-300 border border-green-500/30;
+}
+
+/* Contenedor principal */
+.container-main {
+  @apply min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900 text-slate-50;
+}
+
+/* Header mejorado */
+.header-main {
+  @apply bg-black/30 backdrop-blur-md border-b border-purple-500/30 sticky top-0 z-50;
+}
+
+/* Barra de progreso */
+.progress-bar {
+  @apply w-full bg-slate-700 h-1 rounded-full overflow-hidden;
+}
+
+.progress-bar-fill {
+  @apply h-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-500;
+}
+
+/* Efecto de carga */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Separadores */
+.divider {
+  @apply border-t border-purple-500/20;
+}
+
+/* Textos especiales */
+.text-gradient {
+  @apply bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent;
+}
+
+.text-glow {
+  @apply text-purple-300 drop-shadow-lg drop-shadow-purple-500/50;
+}
+
