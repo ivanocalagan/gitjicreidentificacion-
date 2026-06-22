@@ -1,4 +1,51 @@
 id_socio,nombre,cedula,correo,telefono,carrera,facultad,fecha_ingreso,saldo_ahorros,tipo_cuenta,estado
 1,Ana González,8-123-4567,ana@example.com,6123-4567,Ing. Sistemas,FISC,2021-03-15,1250.50,Ahorro,Activo
 2,Carlos Rivas,2-456-7890,carlos@example.com,6234-5678,Desarrollo Software,FISC,2020-08-01,3400.00,Corriente,Activo
-3,María Pérez,3-987-6543,maria@example.com,6345-6789,Ingeniería, FISC,2019-07-21,2100.75,Ahorro,Activo
+3,María Pérez,3-987-6543,maria@example.com,6345-6789,Ingeniería,FISC,2019-07-21,2100.75,Ahorro,Activo
+4,Juan Morales,1-234-5678,juan@example.com,6234-5679,Ing. Civil,FISC,2020-05-10,1890.25,Corriente,Activo
+5,Luis Fernández,5-345-6789,luis@example.com,6345-6780,Administración,FISC,2022-01-20,2345.00,Ahorro,Activo
+6,Rosa Mendez,7-456-7890,rosa@example.com,6456-7891,Contabilidad,FISC,2021-09-15,1675.50,Inversión,Activo
+7,Pedro García,4-567-8901,pedro@example.com,6567-8902,Ing. Sistemas,FISC,2019-06-01,3200.75,Ahorro,Activo
+8,Sofía Torres,6-678-9012,sofia@example.com,6678-9013,Desarrollo Software,FISC,2022-02-14,1450.00,Corriente,Inactivo
+9,Miguel López,2-789-0123,miguel@example.com,6789-0124,Ing. Civil,FISC,2020-11-30,2567.25,Inversión,Activo
+10,Elena Díaz,9-890-1234,elena@example.com,6890-1235,Administración,FISC,2021-04-18,1820.00,Ahorro,Activo
+11,David Ruiz,3-901-2345,david@example.com,6901-2346,Contabilidad,FISC,2023-08-22,950.50,Corriente,Activo
+12,Carmen Vega,8-012-3456,carmen@example.com,6012-3457,Ing. Sistemas,FISC,2020-12-05,2780.00,Ahorro,Activo
+13,Francisco Blanco,1-123-4569,francisco@example.com,6123-4570,Desarrollo Software,FISC,2022-03-12,1560.75,Inversión,Activo
+14,Isabel Ramos,4-234-5670,isabel@example.com,6234-5681,Ing. Civil,FISC,2019-09-25,3100.25,Ahorro,Activo
+15,Antonio Moreno,6-345-6781,antonio@example.com,6345-6782,Administración,FISC,2021-07-08,2345.00,Corriente,Activo
+16,Marta Gutiérrez,2-456-7892,marta@example.com,6456-7893,Contabilidad,FISC,2023-01-30,1200.50,Ahorro,Suspendido
+17,Ricardo Silva,7-567-8903,ricardo@example.com,6567-8904,Ing. Sistemas,FISC,2020-02-17,2890.75,Inversión,Activo
+18,Beatriz Ortiz,3-678-9014,beatriz@example.com,6678-9015,Desarrollo Software,FISC,2022-06-20,1675.00,Corriente,Activo
+19,Rafael Navarro,5-789-0125,rafael@example.com,6789-0126,Ing. Civil,FISC,2019-10-11,2450.25,Ahorro,Activo
+20,Dolores Castro,1-890-1236,dolores@example.com,6890-1237,Administración,FISC,2021-05-06,1980.00,Inversión,Activo
+21,Enrique Mendoza,9-901-2347,enrique@example.com,6901-2348,Contabilidad,FISC,2023-02-14,1125.50,Ahorro,Activo
+22,Francisca Romero,4-012-3458,francisca@example.com,6012-3459,Ing. Sistemas,FISC,2020-08-29,2670.75,Corriente,Activo
+23,Gonzalo Herrera,6-123-4570,gonzalo@example.com,6123-4571,Desarrollo Software,FISC,2022-04-11,1800.00,Ahorro,Inactivo
+24,Herminia Salas,2-234-5671,herminia@example.com,6234-5682,Ing. Civil,FISC,2019-11-17,2980.25,Inversión,Activo
+25,Ignacio Vidal,8-345-6782,ignacio@example.com,6345-6783,Administración,FISC,2021-09-03,2210.00,Ahorro,Activo
+26,Juliana Estrada,3-456-7893,juliana@example.com,6456-7894,Contabilidad,FISC,2023-03-25,1300.50,Corriente,Activo
+27,Kaleb Araya,7-567-8904,kaleb@example.com,6567-8905,Ing. Sistemas,FISC,2020-07-14,2540.75,Inversión,Activo
+28,Lorena Jimenez,1-678-9015,lorena@example.com,6678-9016,Desarrollo Software,FISC,2022-05-08,1720.00,Ahorro,Activo
+29,Marcos Pacheco,5-789-0126,marcos@example.com,6789-0127,Ing. Civil,FISC,2019-12-22,3050.25,Corriente,Activo
+30,Nilda Ureña,9-890-1237,nilda@example.com,6890-1238,Administración,FISC,2021-06-11,1950.00,Inversión,Suspendido
+31,Óscar Campos,4-901-2348,oscar@example.com,6901-2349,Contabilidad,FISC,2023-04-18,1080.50,Ahorro,Activo
+32,Pamela García,6-012-3459,pamela@example.com,6012-3460,Ing. Sistemas,FISC,2020-09-05,2800.75,Corriente,Activo
+33,Quintín Sandoval,2-123-4571,quintin@example.com,6123-4572,Desarrollo Software,FISC,2022-07-22,1550.00,Ahorro,Activo
+34,Ramón Barbosa,8-234-5672,ramon@example.com,6234-5683,Ing. Civil,FISC,2019-08-16,2720.25,Inversión,Activo
+35,Sabina Orozco,3-345-6783,sabina@example.com,6345-6784,Administración,FISC,2021-10-02,2120.00,Ahorro,Inactivo
+36,Tomás Zamora,7-456-7894,tomas@example.com,6456-7895,Contabilidad,FISC,2023-05-30,1410.50,Corriente,Activo
+37,Úrsula Cortés,1-567-8905,ursula@example.com,6567-8906,Ing. Sistemas,FISC,2020-10-12,2650.75,Inversión,Activo
+38,Verónica Díaz,5-678-9016,veronica@example.com,6678-9017,Desarrollo Software,FISC,2022-08-15,1690.00,Ahorro,Activo
+39,Wilfrido Velasco,9-789-0127,wilfrido@example.com,6789-0128,Ing. Civil,FISC,2019-09-29,2890.25,Corriente,Activo
+40,Xenia Rodríguez,4-890-1238,xenia@example.com,6890-1239,Administración,FISC,2021-11-08,2010.00,Inversión,Activo
+41,Yolanda Medina,6-901-2349,yolanda@example.com,6901-2350,Contabilidad,FISC,2023-06-17,1250.50,Ahorro,Suspendido
+42,Zacarías López,2-012-3460,zacarias@example.com,6012-3461,Ing. Sistemas,FISC,2020-11-20,2920.75,Corriente,Activo
+43,Amparo Acosta,8-123-4572,amparo@example.com,6123-4573,Desarrollo Software,FISC,2022-09-03,1780.00,Ahorro,Activo
+44,Benicio Soto,3-234-5673,benicio@example.com,6234-5684,Ing. Civil,FISC,2019-10-24,2650.25,Inversión,Activo
+45,Cecilia Flores,7-345-6784,cecilia@example.com,6345-6785,Administración,FISC,2021-12-15,2280.00,Ahorro,Activo
+46,Domingo Núñez,1-456-7895,domingo@example.com,6456-7896,Contabilidad,FISC,2023-07-22,1530.50,Corriente,Inactivo
+47,Esmeralda Guerrero,5-567-8906,esmeralda@example.com,6567-8907,Ing. Sistemas,FISC,2020-12-10,2490.75,Inversión,Activo
+48,Fabián Ibáñez,9-678-9017,fabian@example.com,6678-9018,Desarrollo Software,FISC,2022-10-05,1640.00,Ahorro,Activo
+49,Gabriela Lara,4-789-0128,gabriela@example.com,6789-0129,Ing. Civil,FISC,2019-11-18,2920.25,Corriente,Activo
+50,Hernán Solano,6-890-1239,hernan@example.com,6890-1240,Administración,FISC,2021-01-25,2150.00,Inversión,Activo
