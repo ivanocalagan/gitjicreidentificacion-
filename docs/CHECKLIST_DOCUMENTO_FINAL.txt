@@ -1,0 +1,172 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║              CHECKLIST — ITEMS A INCLUIR EN DOCUMENTO FINAL                 ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+SECCIONES A INCLUIR EN TU DOCUMENTO WORD/PDF:
+
+📋 PORTADA
+  ☐ Título: DAT-SIN — Sistema de Anonimización de Datos
+  ☐ Autores: Maryennis Deans, Victor Rivas, Ivan Ocalagan, Ernesto Downer
+  ☐ Curso: Ingeniería de Software Aplicada II (1GS132)
+  ☐ Universidad: UTP FISC
+  ☐ Fecha: I Semestre 2026
+  ☐ Profesora: Ana Gloria Cordero de Hernández
+
+📄 INTRODUCCIÓN
+  ☐ Problema: DBA clonan BD sin enmascaramiento
+  ☐ Solución: Framework web con privacidad diferencial
+  ☐ Objetivo: Cumplir Ley 81 de Panamá
+
+📋 CONTEXTO Y JUSTIFICACIÓN
+  ☐ Ley 81 — Protección de Datos Personales (2019)
+  ☐ Artículos aplicables (2, 5, 8, 15)
+  ☐ Riesgos de exposición de datos
+  ☐ Necesidad de datos de prueba seguros
+
+🏗️ ARQUITECTURA TÉCNICA
+  ☐ Diagrama de capas (4 capas: presentación, API, módulos, datos)
+  ☐ Stack tecnológico (React, FastAPI, Pandas, NumPy)
+  ☐ Flujo de datos (upload → risk → generate → export)
+  ☐ Puertos y comunicación (8000, 5173, CORS)
+
+🔐 PRIVACIDAD DIFERENCIAL
+  ☐ Concepto y garantía matemática
+  ☐ Fórmula: valor_sintético = original + Laplace(0, sensitivity/ε)
+  ☐ Parámetro epsilon explicado (0.5, 1.0, 2.0)
+  ☐ Ejemplos numéricos (ej: salario $2,500 → $2,523.40)
+
+⚙️ MÓDULOS Y COMPONENTES
+  ☐ loader.py: Parseo CSV/SQL
+  ☐ risk_evaluator.py: Scoring heurístico
+  ☐ synthetic_engine.py: Generación DP
+  ☐ exporter.py: Exportación CSV/SQL/PDF
+  ☐ Frontend 4 pasos (React components)
+
+📊 EVALUACIÓN DE RIESGO
+  ☐ Clasificación de columnas (directos, cuasi, sensibles)
+  ☐ Tabla de puntos (35, 15, 10 pts)
+  ☐ Score 0-100 → Niveles ALTO/MEDIO/BAJO
+  ☐ Ejemplo: coopefisc_socios.csv → Score 100
+
+🎨 INTERFAZ DE USUARIO
+  ☐ Screenshots/capturas de 4 pasos
+  ☐ Diseño elegante (gradientes morado/rosa)
+  ☐ Mockups ASCII o reales del navegador
+  ☐ Descripción de funcionalidades por paso
+
+🧪 VALIDACIÓN Y PRUEBAS
+  ☐ Datos de prueba: coopefisc_socios.csv (50 filas)
+  ☐ Tabla de endpoints probados (5/5 exitosos)
+  ☐ Evidencia: request/response (JSON)
+  ☐ Validación de datos sintéticos (cedulas, nombres, salarios)
+
+📁 ESTRUCTURA DE ARCHIVOS
+  ☐ Árbol de directorios completo
+  ☐ Descripción de cada carpeta
+  ☐ Ruta a documentación (docs/)
+  ☐ Ubicación de datos de prueba
+
+📖 MANUAL DE INSTALACIÓN
+  ☐ Requisitos (Python 3.11+, Node.js)
+  ☐ Pasos backend (venv, pip install, uvicorn)
+  ☐ Pasos frontend (npm install, npm run dev)
+  ☐ URLs (localhost:8000, localhost:5173)
+  ☐ Troubleshooting común
+
+📝 CÓDIGO DESTACADO (Fragmentos)
+  ☐ main.py: Snippet endpoint /api/upload
+  ☐ risk_evaluator.py: Algoritmo scoring
+  ☐ synthetic_engine.py: Fórmula Laplace DP
+  ☐ App.jsx: Orquestador React
+  ☐ StepRisk.jsx: Visualización termómetro
+
+✅ RESULTADOS
+  ☐ Tabla ANTES/DESPUÉS (original vs sintético)
+  ☐ Comparativa: nombres, cedulas, salarios
+  ☐ Validación de cambios realizados
+  ☐ Preservación de patrones estadísticos
+
+🎯 CONCLUSIONES
+  ☐ Objetivos alcanzados ✓
+  ☐ Cumplimiento Ley 81 ✓
+  ☐ Privacidad diferencial implementada ✓
+  ☐ Aplicaciones futuras
+  ☐ Mejoras posibles
+
+📚 ANEXOS
+  ☐ RESUMEN_EJECUTIVO.txt (copiar todo)
+  ☐ ARQUITECTURA_Y_PUERTOS.txt
+  ☐ MANUAL_USUARIO.txt
+  ☐ Código fuente completo
+  ☐ Screenshots del navegador
+  ☐ Ejemplos de datos exportados (CSV)
+  ☐ PDF reportes generados
+
+🔗 REFERENCIAS
+  ☐ Ley 81 de Panamá (2019)
+  ☐ FastAPI documentation
+  ☐ React 18 docs
+  ☐ NumPy Laplace documentation
+  ☐ Pandas CSV parsing
+  ☐ Tailwind CSS
+
+
+FUENTES PARA CAPTURAR PANTALLAS:
+
+1. INTERFAZ FRONTEND (http://localhost:5173)
+   - Paso 1: Upload (drag-drop, preview)
+   - Paso 2: Risk (termómetro, chips)
+   - Paso 3: Generate (slider epsilon, preview)
+   - Paso 4: Export (3 tarjetas descargar)
+   - Presiona F12 para ver CSS (Tailwind)
+
+2. BACKEND ENDPOINTS (http://localhost:8000/docs)
+   - Swagger UI automático
+   - Muestra todos endpoints
+   - Permite probar directamente
+
+3. DATOS EXPORTADOS
+   - synthetic_export.csv (abrir en Excel)
+   - report.pdf (PDF con score y epsilon)
+
+4. CÓDIGO FUENTE (en editor)
+   - Copia fragmentos importantes
+   - Muestra líneas clave con comentarios
+   - Destaca privacidad diferencial
+
+
+PAUTAS DE REDACCIÓN:
+
+✓ Lenguaje técnico pero accesible
+✓ Explicar conceptos (DP, epsilon, bootstrap) antes de usar
+✓ Incluir ejemplos numéricos concretos
+✓ Mostrar código en cuadros destacados
+✓ Usar tablas para comparativas
+✓ Diagramas ASCII para arquitectura
+✓ Screenshots para interfaz
+✓ Mantener tono académico profesional
+
+
+TIEMPO ESTIMADO DE INCLUSIÓN:
+
+- Copiar RESUMEN_EJECUTIVO.txt:        15 min
+- Capturar pantallas (4 pasos):          20 min
+- Copiar código destacado:               15 min
+- Redactar secciones complementarias:    30 min
+- Formatear documento:                   20 min
+- Revisar y ajustar:                     15 min
+                                    ──────────────
+TOTAL:                                 ~115 min (1h 55min)
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║ El documento final debe tener:                                              ║
+║ - Mínimo 15 páginas (incluyendo portada, índice, anexos)                   ║
+║ - Mínimo 4 screenshots de interfaz                                          ║
+║ - Mínimo 3 fragmentos de código                                             ║
+║ - Diagramas de arquitectura                                                 ║
+║ - Tabla de validación de endpoints                                          ║
+║ - Conclusiones y referencias                                                ║
+║                                                                              ║
+║ ✅ Si incluyes TODO esto, tendrás un documento EXCELENTE de proyecto final  ║
+╚══════════════════════════════════════════════════════════════════════════════╝
