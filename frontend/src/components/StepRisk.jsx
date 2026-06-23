@@ -17,7 +17,7 @@ export default function StepRisk({ uploadData, setRiskData }){
     const res = await fetch('http://localhost:8000/api/evaluate-risk', { 
       method: 'POST', 
       headers: {'Content-Type':'application/json'}, 
-      body: JSON.stringify({schema: uploadData.schema, columns})
+      body: JSON.stringify({schema: uploadData.schema, columns, preview: uploadData.preview})
     })
     const data = await res.json()
     setRiskData(data)

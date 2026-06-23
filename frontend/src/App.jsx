@@ -52,9 +52,9 @@ export default function App(){
       </header>
 
       {/* CONTENIDO PRINCIPAL */}
-      <main className="max-w-7xl mx-auto px-8 py-12">
+      <main className="max-w-screen-xl mx-auto px-12 py-16">
         {/* BOTONES DE NAVEGACIÓN */}
-        <div className="grid grid-cols-4 gap-3 mb-10 slide-down-animation">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12 slide-down-animation">
           {[
             { num: 1, icon: '📤', label: 'Cargar' },
             { num: 2, icon: '⚠️', label: 'Riesgo' },
@@ -64,17 +64,16 @@ export default function App(){
             <button 
               key={num} 
               onClick={() => setStep(num)} 
-              className={`py-4 px-4 rounded-xl font-bold transition-all duration-300 transform ${
+              className={`p-6 md:p-8 rounded-xl font-bold text-center transition-all duration-300 transform min-h-[120px] ${
                 step === num 
                   ? 'gradient-purple-pink shadow-lg shadow-purple-500/50 scale-105 hover-lift' 
                   : step > num
                   ? 'bg-slate-700 text-slate-300 hover:bg-slate-600'
                   : 'bg-slate-800 text-slate-400 hover:bg-slate-700 cursor-pointer hover-lift'
-              }`}
-            >
-              <div className="text-2xl mb-1">{icon}</div>
-              <div className="text-xs leading-tight">Paso {num}</div>
-              <div className="text-xs text-opacity-75">{label}</div>
+              }`}>
+              <div className="step-icon mb-2">{icon}</div>
+              <div className="text-sm md:text-base leading-tight">Paso {num}</div>
+              <div className="text-sm md:text-base text-opacity-75">{label}</div>
             </button>
           ))}
         </div>

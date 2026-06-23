@@ -1,0 +1,4 @@
+id_socio,nombre,cedula,correo,telefono,carrera,facultad,fecha_ingreso,saldo_ahorros,tipo_cuenta,estado,sexo
+1,Juan Perez,8-123-4567,juan@gmail.com,555-1234,Ingenieria,Ciencias,2018-03-01,1200.50,ahorros,activo,M
+2,Maria Gomez,4-456-7890,maria@hotmail.com,555-5678,Matematicas,Ciencias,2019-06-15,2300.00,ahorros,activo,F
+3,Carlos Ruiz,2-789-0123,carlos@outlook.com,555-9012,Biologia,Ciencias,2020-09-01,1500.75,ahorros,activo,M

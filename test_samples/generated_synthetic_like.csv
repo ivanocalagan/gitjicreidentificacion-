@@ -1,0 +1,6 @@
+id_socio,nombre,cedula,correo,telefono,carrera,facultad,fecha_ingreso,saldo_ahorros,tipo_cuenta,estado,sexo
+3-799-4455,Albano Llopis Hierro,8-607-6885,user87696f@gmail.com,555-0003,Biologia,Ciencias,2021-06-19,1000.0,ahorros,activo,M
+6-960-8684,Buenaventura Calatayud Bonet,2-601-1615,user99185a@gmail.com,555-0001,Ingenieria,Ciencias,2017-08-01,1000.0,ahorros,activo,M
+3-799-4455,Héctor Alcides Andrés Bueno,8-607-6885,user87696f@gmail.com,555-0003,Biologia,Ciencias,2020-07-07,1000.0,ahorros,activo,M
+6-960-8684,Demetrio Vazquez Amor,2-601-1615,user99185a@gmail.com,555-0001,Ingenieria,Ciencias,2018-03-01,1000.0,ahorros,activo,M
+3-799-4455,Conrado Rivas-Giménez,8-607-6885,user87696f@gmail.com,555-0003,Biologia,Ciencias,2020-05-05,1000.0,ahorros,activo,M

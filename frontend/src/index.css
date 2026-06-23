@@ -112,12 +112,33 @@ body {
 
 /* Tarjetas personalizadas */
 .card {
-  @apply bg-slate-800/50 backdrop-blur-sm border border-purple-500/20 rounded-2xl p-6 shadow-lg transition-all duration-300;
+  @apply bg-slate-800/50 backdrop-blur-sm border border-purple-500/20 rounded-2xl p-8 shadow-lg transition-all duration-300;
+}
+
+/* Espaciado consistente dentro de las cards */
+.card > * {
+  margin-bottom: 1rem;
+}
+.card > *:last-child {
+  margin-bottom: 0;
 }
 
 .card:hover {
   @apply border-purple-500/50 shadow-xl shadow-purple-500/20;
 }
+
+/* Iconos principales (pasos, banners) responsivos */
+.step-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+@media (min-width: 768px) {
+  .step-icon { font-size: 3rem; }
+}
+@media (min-width: 1024px) {
+  .step-icon { font-size: 3.5rem; }
+}
+
 
 /* Input personalizado */
 input[type="file"],

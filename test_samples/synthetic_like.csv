@@ -1,0 +1,4 @@
+id_socio,nombre,cedula,correo,telefono,carrera,facultad,fecha_ingreso,saldo_ahorros,tipo_cuenta,estado,sexo
+1,User A,1-234-5678,userabcd@gmail.com,555-0001,Ingenieria,Ciencias,2018-03-01,1000.00,ahorros,activo,M
+2,User B,2-234-5678,user1234@gmail.com,555-0002,Matematicas,Ciencias,2019-06-15,1000.00,ahorros,activo,F
+3,User C,3-234-5678,user1a2b@gmail.com,555-0003,Biologia,Ciencias,2020-09-01,1000.00,ahorros,activo,M

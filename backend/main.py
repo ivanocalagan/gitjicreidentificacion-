@@ -25,7 +25,8 @@ async def api_upload(file: UploadFile = File(...)):
 async def api_evaluate_risk(payload: dict):
     schema = payload.get('schema', {})
     columns = payload.get('columns', [])
-    res = risk_evaluator.evaluate_risk(schema, columns)
+    preview = payload.get('preview', [])
+    res = risk_evaluator.evaluate_risk(schema, columns, preview)
     return res
 
 @app.post('/api/generate')
