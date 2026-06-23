@@ -1,9 +1,0 @@
-Improve UI spacing and responsive icons; enlarge step icons.
-
-Make synthetic generator row-wise: preserves gender, pseudonymizes identifiers (emails, IDs), perturbs numeric values per-row.
-
-Enhance risk evaluator: inspects preview to detect synthesized signals, computes synthesis_score and adjusts risk accordingly.
-
-Add explicacion.md documentation.
-
-Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
